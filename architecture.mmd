@@ -1,0 +1,18 @@
+flowchart TD
+ S[Student] --> UI[Streamlit Interface]
+ UI --> C[AI Study Chat]
+ UI --> R[Document RAG]
+ UI --> Q[Quiz Generator]
+ UI --> T[Study Planner]
+ R --> E[Extract PDF DOCX TXT]
+ E --> CH[Chunk Text]
+ CH --> EM[Embedding API]
+ EM --> RET[Similarity Retrieval]
+ RET --> C
+ C --> LLM[LLM API]
+ Q --> LLM
+ LLM --> A[Agent Function Calling]
+ A --> CALC[Calculator Tool]
+ A --> DB[(SQLite Task Database)]
+ LLM --> OUT[Answer / Quiz / Action Result]
+ OUT --> UI
